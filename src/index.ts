@@ -1,7 +1,7 @@
 import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import express from 'express';
 
-import npcRouter from '@/routes/npcRoutes';
+import npcRouter from '@/routes/npcRouter';
 import logger from '@/utils/logger';
 
 const app = express();
