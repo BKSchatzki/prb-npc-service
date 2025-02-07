@@ -19,10 +19,6 @@ app.use((err: ErrorRequestHandler, req: Request, res: Response, next: NextFuncti
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-app.get('/', (req: Request, res: Response) => {
-  res.json({ helloWorld: 'Hello, World!' });
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
