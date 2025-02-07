@@ -8,6 +8,7 @@ import {
   eyeShapeTraits,
 } from './npc-traits/eyeTraits';
 import { featureTraits } from './npc-traits/featureTraits';
+import { genderTraits } from './npc-traits/genderTraits';
 import {
   hairColorTraits,
   hairStyleTraits,
@@ -27,6 +28,7 @@ import {
 } from './npc-traits/voiceTraits';
 
 const npcTraits = {
+  gender: genderTraits,
   age: ageTraits,
   anatomy: {
     build: buildTraits,

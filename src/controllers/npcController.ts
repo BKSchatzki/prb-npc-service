@@ -1,4 +1,7 @@
-import type { Request, Response } from 'express';
+import type {
+  Request,
+  Response,
+} from 'express';
 
 import npcService from '@/services/npcService';
 import logger from '@/utils/logger';

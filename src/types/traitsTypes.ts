@@ -1,4 +1,5 @@
 export type Traits = {
+  gender: string[];
   age: string[];
   anatomy: { build: string[]; height: string[] };
   skin: { color: string[]; texture: string[] };
