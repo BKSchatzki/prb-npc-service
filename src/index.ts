@@ -1,7 +1,8 @@
-import express, { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import express from 'express';
 
-import npcRouter from './routes/npcRoutes';
-import logger from './utils/logger';
+import npcRouter from '@/routes/npcRoutes';
+import logger from '@/utils/logger';
 
 const app = express();
 const PORT = process.env.PORT || 3000;

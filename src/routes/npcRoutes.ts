@@ -1,10 +1,11 @@
+import type { Request, Response } from 'express';
 import { Router } from 'express';
 
-import logger from '../utils/logger';
+import logger from '@/utils/logger';
 
 const router = Router();
 
-router.get('/names', async (req, res) => {
+router.get('/names', async (req: Request, res: Response) => {
   try {
     const name = { name: 'Namey McName' };
     res.json(name);
