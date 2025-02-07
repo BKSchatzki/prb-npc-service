@@ -6,13 +6,27 @@ import logger from '@/utils/logger';
 class NpcController {
   getAllTraits(req: Request, res: Response) {
     try {
-      const allTraits = npcService.serveAllTraits();
+      const allTraits = npcService.serveAll();
+      logger.info(`All traits served`);
       res.json(allTraits);
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error serving name: ${msg}`);
-      res.status(500).json({ error: 'Failed to get name' });
+      logger.error(`Error getting all traits: ${msg}`);
+      res.status(500).json({ error: 'Failed to get all traits' });
+    }
+  }
+
+  getRandomTraitsForOne(req: Request, res: Response) {
+    try {
+      const randomTraitsForOne = npcService.serveRandomTraitsForOne();
+      logger.info(`Random traits for one NPC served`);
+      res.json(randomTraitsForOne);
+    } catch (err) {
+      let msg;
+      err instanceof Error ? (msg = err.message) : (msg = String(err));
+      logger.error(`Error getting random traits for one  NPC: ${msg}`);
+      res.status(500).json({ error: 'Failed to get random traits for one NPC' });
     }
   }
 }
