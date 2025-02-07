@@ -1,4 +1,4 @@
-export const mannerismsList = [
+export const mannerismTraits = [
   'constantly fidgets',
   'talks to self',
   'laughs after speaking',

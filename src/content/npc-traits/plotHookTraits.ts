@@ -1,4 +1,4 @@
-export const plotHooksList = [
+export const plotHookTraits = [
   'needs help moving heavy furniture',
   'is searching for a lost pet',
   'wants to deliver a message to someone',

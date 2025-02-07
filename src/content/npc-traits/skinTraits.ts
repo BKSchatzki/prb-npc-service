@@ -1,4 +1,4 @@
-export const skinColorList = [
+export const skinColorTraits = [
   'ivory',
   'alabaster',
   'pale',
@@ -100,7 +100,7 @@ export const skinColorList = [
   'mountain-touched',
   'valley-blessed',
 ];
-export const skinTextureList = [
+export const skinTextureTraits = [
   'smooth',
   'soft',
   'silky',

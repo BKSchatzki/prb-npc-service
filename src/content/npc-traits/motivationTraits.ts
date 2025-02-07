@@ -1,4 +1,4 @@
-export const motivationsList = [
+export const motivationTraits = [
   'wealth',
   'knowledge',
   'power',

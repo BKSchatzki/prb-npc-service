@@ -1,4 +1,4 @@
-export const featuresList = [
+export const featureTraits = [
   'a missing front tooth',
   'a crooked nose',
   'a large facial scar',

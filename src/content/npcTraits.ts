@@ -1,47 +1,59 @@
-import { ageList } from './npc-traits/ageTraits';
-import { buildList, heightList } from './npc-traits/anatomyTraits';
-import { eyeColorList, eyeShapeList } from './npc-traits/eyeTraits';
-import { featuresList } from './npc-traits/featureTraits';
-import { hairColorList, hairStyleList } from './npc-traits/hairTraits';
-import { mannerismsList } from './npc-traits/mannerismTraits';
-import { motivationsList } from './npc-traits/motivationTraits';
-import { plotHooksList } from './npc-traits/plotHookTraits';
-import { skinColorList, skinTextureList } from './npc-traits/skinTraits';
+import { ageTraits } from './npc-traits/ageTraits';
 import {
-  voicePitchList,
-  voiceQualityList,
-  voiceSpeedList,
-  voiceVolumeList,
+  buildTraits,
+  heightTraits,
+} from './npc-traits/anatomyTraits';
+import {
+  eyeColorTraits,
+  eyeShapeTraits,
+} from './npc-traits/eyeTraits';
+import { featureTraits } from './npc-traits/featureTraits';
+import {
+  hairColorTraits,
+  hairStyleTraits,
+} from './npc-traits/hairTraits';
+import { mannerismTraits } from './npc-traits/mannerismTraits';
+import { motivationTraits } from './npc-traits/motivationTraits';
+import { plotHookTraits } from './npc-traits/plotHookTraits';
+import {
+  skinColorTraits,
+  skinTextureTraits,
+} from './npc-traits/skinTraits';
+import {
+  voicePitchTraits,
+  voiceQualityTraits,
+  voiceSpeedTraits,
+  voiceVolumeTraits,
 } from './npc-traits/voiceTraits';
 
 const npcTraits = {
-  age: ageList,
+  age: ageTraits,
   anatomy: {
-    build: buildList,
-    height: heightList,
+    build: buildTraits,
+    height: heightTraits,
   },
   skin: {
-    color: skinColorList,
-    texture: skinTextureList,
+    color: skinColorTraits,
+    texture: skinTextureTraits,
   },
   hair: {
-    color: hairColorList,
-    style: hairStyleList,
+    color: hairColorTraits,
+    style: hairStyleTraits,
   },
   eyes: {
-    color: eyeColorList,
-    shape: eyeShapeList,
+    color: eyeColorTraits,
+    shape: eyeShapeTraits,
   },
   voice: {
-    pitch: voicePitchList,
-    quality: voiceQualityList,
-    speed: voiceSpeedList,
-    volume: voiceVolumeList,
+    pitch: voicePitchTraits,
+    quality: voiceQualityTraits,
+    speed: voiceSpeedTraits,
+    volume: voiceVolumeTraits,
   },
-  features: featuresList,
-  mannerisms: mannerismsList,
-  motivation: motivationsList,
-  plotHooks: plotHooksList,
+  features: featureTraits,
+  mannerisms: mannerismTraits,
+  motivation: motivationTraits,
+  plotHooks: plotHookTraits,
 };
 
 export default npcTraits;

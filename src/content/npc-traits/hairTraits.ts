@@ -1,4 +1,4 @@
-export const hairColorList = [
+export const hairColorTraits = [
   'raven black',
   'golden blonde',
   'rich auburn',
@@ -106,7 +106,7 @@ export const hairColorList = [
   'violet purple',
 ];
 
-export const hairStyleList = [
+export const hairStyleTraits = [
   'single braid',
   'ponytail',
   'neat bun',

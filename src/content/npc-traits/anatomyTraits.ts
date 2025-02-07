@@ -1,4 +1,4 @@
-export const buildList = [
+export const buildTraits = [
   'athletic',
   'muscular',
   'slim',
@@ -101,7 +101,7 @@ export const buildList = [
   'delicately-built',
 ];
 
-export const heightList = [
+export const heightTraits = [
   'extremely short',
   'very short',
   'short',

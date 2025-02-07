@@ -1,4 +1,4 @@
-export const ageList = [
+export const ageTraits = [
   'child',
   'juvenile',
   'teenage',

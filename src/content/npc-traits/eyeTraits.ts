@@ -1,4 +1,4 @@
-export const eyeColorList = [
+export const eyeColorTraits = [
   'deep brown',
   'ice blue',
   'forest green',
@@ -126,7 +126,7 @@ export const eyeColorList = [
   'aqua blue',
 ];
 
-export const eyeShapeList = [
+export const eyeShapeTraits = [
   'almond-shaped',
   'round',
   'upturned',

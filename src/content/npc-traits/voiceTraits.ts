@@ -1,4 +1,4 @@
-export const voicePitchList = [
+export const voicePitchTraits = [
   'very deep',
   'deep',
   'moderately deep',
@@ -9,7 +9,7 @@ export const voicePitchList = [
   'very high',
 ];
 
-export const voiceQualityList = [
+export const voiceQualityTraits = [
   'melodious',
   'rough',
   'breathy',
@@ -112,7 +112,7 @@ export const voiceQualityList = [
   'faltering',
 ];
 
-export const voiceSpeedList = [
+export const voiceSpeedTraits = [
   'very slow',
   'slow',
   'unhurried',
@@ -125,7 +125,7 @@ export const voiceSpeedList = [
   'variable',
 ];
 
-export const voiceVolumeList = [
+export const voiceVolumeTraits = [
   'barely audible',
   'very quiet',
   'quiet',
