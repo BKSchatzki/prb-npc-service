@@ -6,6 +6,7 @@ import { hairColorList, hairStyleList } from './npc-traits/hairTraits';
 import { mannerismsList } from './npc-traits/mannerismTraits';
 import { motivationsList } from './npc-traits/motivationTraits';
 import { plotHooksList } from './npc-traits/plotHookTraits';
+import { skinColorList, skinTextureList } from './npc-traits/skinTraits';
 import {
   voicePitchList,
   voiceQualityList,
@@ -18,6 +19,10 @@ const npcTraits = {
   anatomy: {
     build: buildList,
     height: heightList,
+  },
+  skin: {
+    color: skinColorList,
+    texture: skinTextureList,
   },
   hair: {
     color: hairColorList,
