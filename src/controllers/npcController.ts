@@ -7,9 +7,22 @@ import npcService from '@/services/npcService';
 import logger from '@/utils/logger';
 
 class NpcController {
+  getAllNames(req: Request, res: Response) {
+    try {
+      const allNames = npcService.serveAllNames();
+      logger.info(`All names served`);
+      res.json(allNames);
+    } catch (err) {
+      let msg;
+      err instanceof Error ? (msg = err.message) : (msg = String(err));
+      logger.error(`Error getting all names: ${msg}`);
+      res.status(500).json({ error: 'Failed to get all names' });
+    }
+  }
+
   getAllTraits(req: Request, res: Response) {
     try {
-      const allTraits = npcService.serveAll();
+      const allTraits = npcService.serveAllTraits();
       logger.info(`All traits served`);
       res.json(allTraits);
     } catch (err) {

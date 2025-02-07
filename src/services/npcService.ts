@@ -1,15 +1,30 @@
+import npcNames from '@/content/npcNames';
 import npcTraits from '@/content/npcTraits';
+import type { Names } from '@/types/namesTypes';
 import type { Traits } from '@/types/traitsTypes';
 import logger from '@/utils/logger';
 
 class NpcService {
   traits: Traits;
+  names: Names;
 
-  constructor(traits: Traits) {
+  constructor(names: Names, traits: Traits) {
+    this.names = names;
     this.traits = traits;
   }
 
-  serveAll(): Traits {
+  serveAllNames(): Names {
+    try {
+      return this.names;
+    } catch (err) {
+      let msg;
+      err instanceof Error ? (msg = err.message) : (msg = String(err));
+      logger.error(`Error serving all names: ${msg}`);
+      throw new Error('Failed to serve all names');
+    }
+  }
+
+  serveAllTraits(): Traits {
     try {
       return this.traits;
     } catch (err) {
@@ -50,6 +65,6 @@ class NpcService {
   }
 }
 
-const npcService = new NpcService(npcTraits);
+const npcService = new NpcService(npcNames, npcTraits);
 
 export default npcService;
