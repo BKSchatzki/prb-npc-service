@@ -1,4 +1,4 @@
-export type SpeciesNames = {
+export type NamesOfSpecies = {
   givenNames: {
     male: string[];
     female: string[];
@@ -6,34 +6,15 @@ export type SpeciesNames = {
   surnames: string[];
 };
 
-export const SPECIES_VALUES = [
-  'aasimar',
-  'dragonborn',
-  'dwarf',
-  'elf',
-  'gnome',
-  'goliath',
-  'halfling',
-  'human',
-  'orc',
-  'tiefling',
-] as const;
-
-export type SpeciesKeys = (typeof SPECIES_VALUES)[number];
-
-export const isValidSpecies = (value: unknown): value is SpeciesKeys => {
-  return typeof value === 'string' && SPECIES_VALUES.includes(value as SpeciesKeys);
-};
-
 export type Names = {
-  aasimar: SpeciesNames;
-  dragonborn: SpeciesNames;
-  dwarf: SpeciesNames;
-  elf: SpeciesNames;
-  gnome: SpeciesNames;
-  goliath: SpeciesNames;
-  halfling: SpeciesNames;
-  human: SpeciesNames;
-  orc: SpeciesNames;
-  tiefling: SpeciesNames;
+  aasimar: NamesOfSpecies;
+  dragonborn: NamesOfSpecies;
+  dwarf: NamesOfSpecies;
+  elf: NamesOfSpecies;
+  gnome: NamesOfSpecies;
+  goliath: NamesOfSpecies;
+  halfling: NamesOfSpecies;
+  human: NamesOfSpecies;
+  orc: NamesOfSpecies;
+  tiefling: NamesOfSpecies;
 };

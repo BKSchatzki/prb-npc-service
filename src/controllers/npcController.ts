@@ -7,7 +7,7 @@ import npcService from '@/services/npcService';
 import {
   isValidSpecies,
   type SpeciesKeys,
-} from '@/types/namesTypes';
+} from '@/types/speciesTypes';
 import logger from '@/utils/logger';
 
 class NpcController {
@@ -39,11 +39,14 @@ class NpcController {
 
   getOneNpc(req: Request, res: Response) {
     try {
+      const oneNpc = npcService.serveOneNpc();
+      logger.info(`One NPC served`);
+      res.json(oneNpc);
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error getting one random NPC: ${msg}`);
-      res.status(500).json({ error: 'Failed to get one random NPC ' });
+      logger.error(`Error getting one NPC: ${msg}`);
+      res.status(500).json({ error: 'Failed to get one NPC ' });
     }
   }
 
@@ -55,14 +58,14 @@ class NpcController {
         res.status(400).json({ error: 'Invalid species parameter' });
         return;
       }
-      const randomTraitsForOne = npcService.serveOneNpcOfSpecies(species);
-      logger.info(`Random traits for one NPC served`);
-      res.json(randomTraitsForOne);
+      const oneNpcOfSpecies = npcService.serveOneNpcOfSpecies(species);
+      logger.info(`One ${species} NPC served`);
+      res.json(oneNpcOfSpecies);
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error getting one random NPC of a species: ${msg}`);
-      res.status(500).json({ error: 'Failed to get one random NPC of a species' });
+      logger.error(`Error getting one NPC of a species: ${msg}`);
+      res.status(500).json({ error: 'Failed to get one NPC of a species' });
     }
   }
 }

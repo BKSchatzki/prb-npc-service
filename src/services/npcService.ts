@@ -2,9 +2,12 @@ import npcNames from '@/content/npcNames';
 import npcTraits from '@/content/npcTraits';
 import type {
   Names,
-  SpeciesKeys,
-  SpeciesNames,
+  NamesOfSpecies,
 } from '@/types/namesTypes';
+import {
+  SPECIES_VALUES,
+  type SpeciesKeys,
+} from '@/types/speciesTypes';
 import type {
   SingleTraits,
   Traits,
@@ -42,6 +45,22 @@ class NpcService {
     }
   }
 
+  serveOneNpc() {
+    try {
+      const traits = this.selectRandomTraits() as SingleTraits;
+      const species = SPECIES_VALUES[
+        Math.floor(Math.random() * SPECIES_VALUES.length)
+      ] as (typeof SPECIES_VALUES)[number];
+      const name = this.selectRandomNameFromSpeciesAndGender(species, traits.gender);
+      return { name, species, ...traits };
+    } catch (err) {
+      let msg;
+      err instanceof Error ? (msg = err.message) : (msg = String(err));
+      logger.error(`Error serving one NPC: ${msg}`);
+      throw new Error(`Failed to serve one NPC`);
+    }
+  }
+
   serveOneNpcOfSpecies(species: SpeciesKeys) {
     try {
       const traits = this.selectRandomTraits() as SingleTraits;
@@ -50,13 +69,13 @@ class NpcService {
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error serving one random ${species || 'unspecified'} NPC: ${msg}`);
-      throw new Error(`Failed to serve one random ${species || 'unspecified'} NPC`);
+      logger.error(`Error serving one ${species || 'unspecified'} NPC: ${msg}`);
+      throw new Error(`Failed to serve one ${species || 'unspecified'} NPC`);
     }
   }
 
   private selectRandomNameFromSpeciesAndGender(species: SpeciesKeys, gender: string) {
-    const speciesNames: SpeciesNames = this.names[species];
+    const speciesNames: NamesOfSpecies = this.names[species];
     const maleName =
       speciesNames.givenNames.male[Math.floor(Math.random() * speciesNames.givenNames.male.length)];
     const femaleName =
