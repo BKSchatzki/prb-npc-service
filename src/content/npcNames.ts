@@ -10,16 +10,16 @@ import { orcNames } from './npc-names/orcNames';
 import { tieflingNames } from './npc-names/tieflingNames';
 
 const npcNames = {
-  aasimarNames: aasimarNames,
-  dragonbornNames: dragonbornNames,
-  dwarfNames: dwarfNames,
-  elfNames: elfNames,
-  gnomeNames: gnomeNames,
-  goliathNames: goliathNames,
-  halflingNames: halflingNames,
-  humanNames: humanNames,
-  orcNames: orcNames,
-  tieflingNames: tieflingNames,
+  aasimar: aasimarNames,
+  dragonborn: dragonbornNames,
+  dwarf: dwarfNames,
+  elf: elfNames,
+  gnome: gnomeNames,
+  goliath: goliathNames,
+  halfling: halflingNames,
+  human: humanNames,
+  orc: orcNames,
+  tiefling: tieflingNames,
 };
 
 export default npcNames;

@@ -4,6 +4,10 @@ import type {
 } from 'express';
 
 import npcService from '@/services/npcService';
+import {
+  isValidSpecies,
+  type SpeciesKeys,
+} from '@/types/namesTypes';
 import logger from '@/utils/logger';
 
 class NpcController {
@@ -33,9 +37,14 @@ class NpcController {
     }
   }
 
-  getRandomTraitsForOne(req: Request, res: Response) {
+  getOneNpcOfSpecies(req: Request, res: Response) {
     try {
-      const randomTraitsForOne = npcService.serveRandomTraitsForOne();
+      const species = req.params.species;
+      if (!isValidSpecies(species)) {
+        logger.error(`Invalid species parameter received: ${species}`);
+        return res.status(400).json({ error: 'Invalid species parameter' });
+      }
+      const randomTraitsForOne = npcService.serveOneNpcOfSpecies(species);
       logger.info(`Random traits for one NPC served`);
       res.json(randomTraitsForOne);
     } catch (err) {

@@ -11,3 +11,11 @@ export type Traits = {
   motivation: string[];
   plotHooks: string[];
 };
+
+export type SingleTraits = {
+  [K in keyof Traits]: Traits[K] extends (infer U)[]
+    ? U
+    : Traits[K] extends object
+    ? { [P in keyof Traits[K]]: Traits[K][P] extends Array<infer U> ? U : never }
+    : Traits[K];
+};
