@@ -50,8 +50,8 @@ class NpcService {
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error serving one random NPC: ${msg}`);
-      throw new Error('Failed to serve one random NPC');
+      logger.error(`Error serving one random ${species || 'unspecified'} NPC: ${msg}`);
+      throw new Error(`Failed to serve one random ${species || 'unspecified'} NPC`);
     }
   }
 

@@ -37,6 +37,16 @@ class NpcController {
     }
   }
 
+  getOneNpc(req: Request, res: Response) {
+    try {
+    } catch (err) {
+      let msg;
+      err instanceof Error ? (msg = err.message) : (msg = String(err));
+      logger.error(`Error getting one random NPC: ${msg}`);
+      res.status(500).json({ error: 'Failed to get one random NPC ' });
+    }
+  }
+
   getOneNpcOfSpecies(req: Request, res: Response) {
     try {
       const species = req.params.species;
@@ -51,8 +61,8 @@ class NpcController {
     } catch (err) {
       let msg;
       err instanceof Error ? (msg = err.message) : (msg = String(err));
-      logger.error(`Error getting random traits for one  NPC: ${msg}`);
-      res.status(500).json({ error: 'Failed to get random traits for one NPC' });
+      logger.error(`Error getting one random NPC of a species: ${msg}`);
+      res.status(500).json({ error: 'Failed to get one random NPC of a species' });
     }
   }
 }
