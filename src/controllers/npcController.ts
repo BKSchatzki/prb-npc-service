@@ -51,7 +51,7 @@ class NpcController {
     try {
       const species = req.params.species;
       if (!isValidSpecies(species)) {
-        logger.error(`Invalid species parameter received: ${species}`);
+        logger.warn(`Invalid species parameter received: ${species}`);
         res.status(400).json({ error: 'Invalid species parameter' });
         return;
       }

@@ -2,6 +2,9 @@ const logger = {
   info: (msg: string) => {
     console.log(`[INFO] ${new Date().toISOString()}: ${msg}`);
   },
+  warn: (msg: string) => {
+    console.log(`[WARN] ${new Date().toISOString()}: ${msg}`);
+  },
   error: (msg: string) => {
     console.log(`[ERROR] ${new Date().toISOString()}: ${msg}`);
   },
