@@ -3,12 +3,12 @@ import type {
   Response,
 } from 'express';
 
-import npcService from '@/services/npcService';
+import npcService from '@/services/npcService.js';
 import {
   isValidSpecies,
   type SpeciesKeys,
-} from '@/types/speciesTypes';
-import logger from '@/utils/logger';
+} from '@/types/speciesTypes.js';
+import logger from '@/utils/logger.js';
 
 class NpcController {
   getAllNames(req: Request, res: Response) {

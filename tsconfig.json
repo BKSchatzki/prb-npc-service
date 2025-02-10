@@ -13,9 +13,10 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    // Preserve source code and do not emit files
-    "module": "preserve",
-    "noEmit": true,
+    // Transpile TypeScript code to JavaScript
+    "module": "NodeNext",
+    "outDir": "dist",
+    // Only es2022 needed because not running in DOM
     "lib": ["es2022"],
     // Handle default paths and import aliases
     "baseUrl": "./",

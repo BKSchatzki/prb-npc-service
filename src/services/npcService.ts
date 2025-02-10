@@ -1,18 +1,18 @@
-import npcNames from '@/content/npcNames';
-import npcTraits from '@/content/npcTraits';
+import npcNames from '@/content/npcNames.js';
+import npcTraits from '@/content/npcTraits.js';
 import type {
   Names,
   NamesOfSpecies,
-} from '@/types/namesTypes';
+} from '@/types/namesTypes.js';
 import {
   SPECIES_VALUES,
   type SpeciesKeys,
-} from '@/types/speciesTypes';
+} from '@/types/speciesTypes.js';
 import type {
   SingleTraits,
   Traits,
-} from '@/types/traitsTypes';
-import logger from '@/utils/logger';
+} from '@/types/traitsTypes.js';
+import logger from '@/utils/logger.js';
 
 class NpcService {
   traits: Traits;

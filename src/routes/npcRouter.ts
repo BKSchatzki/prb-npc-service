@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import npcController from '@/controllers/npcController';
+import npcController from '@/controllers/npcController.js';
 
 const router = Router();
 
