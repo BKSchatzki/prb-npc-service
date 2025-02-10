@@ -1,10 +1,5 @@
 import cors from 'cors';
-import type {
-  ErrorRequestHandler,
-  NextFunction,
-  Request,
-  Response,
-} from 'express';
+import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import express from 'express';
 
 import npcRouter from '@/routes/npcRouter.js';
@@ -13,11 +8,7 @@ import logger from '@/utils/logger.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = process.env.ALLOWED_OPTIONS?.split('') || [`http://localhost:${PORT}}`];
-const corsOptions = {
-  origin: allowedOrigins,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   logger.info(`${req.method} ${req.path}`);
