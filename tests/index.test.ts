@@ -27,4 +27,12 @@ describe('NPC Service Tests', () => {
       expect(res.body).toHaveProperty('aasimar');
     });
   });
+  describe('GET /api/v1/traits', () => {
+    test('traits should contain three gender options', async () => {
+      const res = await req(app).get('/api/v1/traits');
+      expect(res.statusCode).toBe(200);
+      expect(res.body).toHaveProperty('gender');
+      expect(res.body.gender).toHaveLength(3);
+    });
+  });
 });
