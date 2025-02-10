@@ -1,6 +1,7 @@
 import req from 'supertest';
 
 import app from '@/index.js';
+import dedupeList from '@/utils/deduper.js';
 
 describe('NPC Service Tests', () => {
   describe('GET /api/v1/npc/human', () => {
@@ -34,5 +35,11 @@ describe('NPC Service Tests', () => {
       expect(res.body).toHaveProperty('gender');
       expect(res.body.gender).toHaveLength(3);
     });
+  });
+});
+
+describe('Utilities Tests', () => {
+  test('Deduper removes duplicates', () => {
+    expect(dedupeList(['a', 'b', 'b', 'c'])).toStrictEqual(['a', 'b', 'c']);
   });
 });
