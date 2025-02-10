@@ -1,3 +1,4 @@
+import cors from 'cors';
 import type {
   ErrorRequestHandler,
   NextFunction,
@@ -11,6 +12,12 @@ import logger from '@/utils/logger.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+const allowedOrigins = [process.env.ALLOWED_OPTIONS || '0.0.0.0'];
+const options: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
+app.use(cors(options));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   logger.info(`${req.method} ${req.path}`);
