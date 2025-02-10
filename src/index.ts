@@ -1,5 +1,10 @@
 import cors from 'cors';
-import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import type {
+  ErrorRequestHandler,
+  NextFunction,
+  Request,
+  Response,
+} from 'express';
 import express from 'express';
 
 import npcRouter from '@/routes/npcRouter.js';

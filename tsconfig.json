@@ -22,7 +22,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   // Include the necessary files for project
   "include": ["**/*.ts", "**/*.tsx"],
