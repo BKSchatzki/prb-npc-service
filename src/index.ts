@@ -14,10 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [process.env.ALLOWED_OPTIONS || '0.0.0.0'];
-const options: cors.CorsOptions = {
+const corsOptions = {
   origin: allowedOrigins,
 };
-app.use(cors(options));
+app.use(cors(corsOptions));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   logger.info(`${req.method} ${req.path}`);
