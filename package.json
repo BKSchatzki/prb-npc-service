@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.build.json && tsc-alias",
+    "deploy:test": "rm -rf node_modules dist && npm ci --omit=dev && npm run build && npm start",
     "dev": "npx tsx --env-file=.env --watch ./src/index.ts",
     "start": "node dist/index.js",
     "test": "vitest run",
