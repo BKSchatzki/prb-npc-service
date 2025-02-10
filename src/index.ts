@@ -13,7 +13,7 @@ import logger from '@/utils/logger.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = [process.env.ALLOWED_OPTIONS || '0.0.0.0'];
+const allowedOrigins = process.env.ALLOWED_OPTIONS?.split('') || [`http://localhost:${PORT}}`];
 const corsOptions = {
   origin: allowedOrigins,
 };
