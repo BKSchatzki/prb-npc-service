@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>PartyRoomBloom NPC Service API</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>
+        <a
+          href="https://partyroombloom.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >PartyRoomBloom</a
+        >
+        NPC Service API
+      </h1>
+      <h2>Endpoints:</h2>
+      <ul>
+        <li>
+          <code>/api/v1/names</code>
+          <p>
+            Displays a complete list of all names, sorted by species, given name (by gender), and
+            surname.
+          </p>
+        </li>
+        <li>
+          <code>/api/v1/traits</code>
+          <p>Displays a complete list of all traits:</p>
+          <p>
+            gender, age, anatomy (build, height), skin (color, texture), hair (color, style,), eyes
+            (color, shape), voice (pitch, quality, speed, volume), distinguishing features,
+            mannerisms, core motivations, and plot hooks.
+          </p>
+        </li>
+        <li>
+          <code>/api/v1/npc</code>
+          <p>Creates one totally randomized NPC with one of each trait.</p>
+        </li>
+        <li>
+          <code>/api/v1/npc/:species</code>
+          <p>
+            Creates one random NPC of a chosen species with one of each trait. Valid species are:
+            aasimar, dragonborn, dwarf, elf, gnome, goliath, halfling, human, orc, tiefling.
+          </p>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
