@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req: Request, res: Response) => {
   try {
     res.status(200).sendFile(path.join(__dirname, 'index.html'));
+    logger.info(`Index page served`);
   } catch (err) {
     let msg;
     err instanceof Error ? (msg = err.message) : (msg = String(err));
