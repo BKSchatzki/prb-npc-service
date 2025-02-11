@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: #ffbe00;
+  color: var(--document-background-color);
+}
+
 html,
 body {
   align-items: center;
@@ -19,7 +24,7 @@ body {
   color: var(--document-text-color);
   display: flex;
   flex-direction: column;
-  font-family: sans-serif;
+  font-family: 'Verdana', sans-serif;
   justify-content: center;
   min-height: calc(100vh - var(--container-padding-y));
   margin: 0;
@@ -41,6 +46,7 @@ h1 {
   a {
     color: #6366f1;
     text-decoration: none;
+    transition: color 150ms ease-in-out 0ms;
   }
   a:visited {
     color: #6366f1;
