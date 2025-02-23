@@ -1,6 +1,8 @@
 # PartyRoomBloom NPC Service API
 
-This is a server-hosted version of the API that serves NPCs for PartyRoomBloom. Its purpose is to allow creation of random NPCs on the fly when running social storytelling sessions.
+This is a server-hosted version of the API that serves NPCs for [PartyRoomBloom](https://www.partyroombloom.com). Its purpose is to allow creation of random NPCs on the fly when running social storytelling sessions. This API is public and can be accessed at <https://prb-npc-service.onrender.com>.
+
+It is likely that this API will be deprecated in the future, as the logic gets folded into the main PartyRoomBloom repo at <https://github.com/BKSchatzki/partyroombloom>.
 
 ## Current Status
 
